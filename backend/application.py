@@ -20,7 +20,7 @@ footer_text = "</body>\n</html>"
 # EB looks for an 'application' callable by default.
 application = app = Flask(__name__)
 application.config.from_object(
-    os.environ.get("APP_SETTINGS", "backend.config.DevelopmentConfig")
+    os.environ.get("APP_SETTINGS", "config.DevelopmentConfig")
 )
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(application)

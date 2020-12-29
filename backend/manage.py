@@ -1,7 +1,7 @@
-import os
+# import sys
+# sys.path.append("..")
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-
 from application import application, db
 
 migrate = Migrate(application, db)

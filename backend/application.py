@@ -1,4 +1,6 @@
 import os
+import sys
+sys.path.append("..")
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -19,11 +21,11 @@ footer_text = "</body>\n</html>"
 
 # EB looks for an 'application' callable by default.
 application = app = Flask(__name__)
-application.config.from_object(
-    os.environ.get("APP_SETTINGS", "config.DevelopmentConfig")
-)
+application.config.from_object('config_app.DevelopmentConfig')
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(application)
+
+from backend.models.base_models import *
 
 # add a rule for the index page.
 application.add_url_rule(

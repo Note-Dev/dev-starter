@@ -1,7 +1,5 @@
-from backend.application import db
 from sqlalchemy.dialects.postgresql import JSON
-
-
+from models import db
 class Dummy(db.Model):
     __tablename__ = "dummy"
 

@@ -1,1 +1,1 @@
-from backend.application import db
+from backend.application import db, application, bcrypt
